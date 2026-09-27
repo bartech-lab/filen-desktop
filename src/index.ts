@@ -172,8 +172,6 @@ export class FilenDesktop {
 					return
 				}
 
-				// The window may be hidden to the tray, not just minimized. focus() does not un-hide it, so the launch
-				// handed off to this instance and nothing appeared.
 				this.showOrOpenDriveWindow()
 			})
 
