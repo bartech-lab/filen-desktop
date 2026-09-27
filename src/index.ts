@@ -172,13 +172,9 @@ export class FilenDesktop {
 					return
 				}
 
-				if (this.driveWindow) {
-					if (this.driveWindow.isMinimized()) {
-						this.driveWindow.restore()
-					}
-
-					this.driveWindow.focus()
-				}
+				// The window may be hidden to the tray, not just minimized. focus() does not un-hide it, so the launch
+				// handed off to this instance and nothing appeared.
+				this.showOrOpenDriveWindow()
 			})
 
 			app.setAppUserModelId("io.filen.desktop")
